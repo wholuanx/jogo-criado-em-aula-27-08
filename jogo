@@ -1,0 +1,33 @@
+TELA_LARGURA = 500
+TELA_ALTURA = 800
+
+IMAGEM_CANO = pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'pipe.png')))
+IMAGEM_CHAO =  pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'base.png')))
+IMAGEM_BACKGROUND =  pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'bg.png')))
+IMAGEM_PASSARO = [
+    pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'bird1.png'))),
+    pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'bird2.png'))),
+    pygame.transform.scale2x(pygame.image.load(os.path.join('imgs', 'bird3.png')))
+]
+
+pygame.font.init()
+FONTE_PONTOS = pygame.font.SysFont('arial', 50)
+
+class Passaro:
+    DISTANCIA = 200
+    VELOCIDADE = 5
+    def __init__(self, x):
+        self.x = x
+        self.altura = 0
+        self.pos_topo = 0
+        self.pos_base = 0
+        self.CANO_TOPO = IMAGEM_CANO
+        self.CANO_BASE = pygame.transform.flip(IMAGEM_CANO, False, True)
+        self.passou = False
+        self.definir_altura()
+
+class Cano:
+    pass
+
+class Chao:
+    pass
