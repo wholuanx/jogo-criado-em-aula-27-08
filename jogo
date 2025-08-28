@@ -1,5 +1,6 @@
 import pygame
-import os
+import os  
+
 import random
 
 TELA_LARGURA = 500
@@ -75,7 +76,7 @@ class Passaro:
          self.contagem_imagem = 0
 
       #se o passaro estiver caindo , nao bater as asas
-      if self.angulo <= 80:
+      if self.angulo <= -80:
          self.imagem = self.IMGS[1]
          self.contagem_imagem = self.TEMPO_ANIMACAO*2
 
